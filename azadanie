@@ -1,0 +1,23 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+const int SIZE = 1000;
+void zadanie(){
+
+ int tab1[SIZE], tab2[SIZE];
+ ifstream plik1("liczby1.txt");
+ ifstream plik2("liczby2.txt");
+ for (int i = 0; i < SIZE; i++) plik1 >> oct >> tab1[i];
+ for (int i = 0; i < SIZE; i++) plik2 >> tab2[i];
+ plik1.close();
+ plik2.close();
+ int a = 0, b = 0;
+ for (int i = 0; i < SIZE; i++) {
+    if (tab1[i] == tab2[i]) a++;
+    if (tab1[i] > tab2[i]) b++;
+  }
+  cout << "a) " <<  a << endl << "b) " << b << endl;
+}
+int main() {
+ zadanie();
+} 
